@@ -4,17 +4,10 @@
 
 ## Overview
 
-This repository contains both a **Word Embeddings Lab** and **HW5: Multi-Document NLP Analysis** focusing on conversations in Reddit's r/ChangeMyView community. Students will first complete a hands-on lab exploring word embeddings for social text analysis, then apply these skills to a comprehensive homework analyzing discourse patterns across linked posts and comments.
+This assignment focuses on conversations in Reddit's r/ChangeMyView community. You will apply your NLP skills to analyze discourse patterns across linked posts and comments from this community.
 
 ### Learning Objectives
 
-**Word Embeddings Lab**: 
-- Apply pre-trained word embeddings to social media text
-- Create and interpret semantic axes for social concepts
-- Analyze bias and semantic relationships in word embeddings
-- Compare discourse patterns across different communities
-
-**HW5 Multi-Document NLP**:
 - Link and analyze multiple related text documents
 - Compare language patterns between posts (arguments) and comments (responses)  
 - Apply word embeddings to analyze social discourse dynamics
@@ -50,7 +43,6 @@ nlp-analysis-social-text/
 │   ├── changemyview_posts.csv         # CMV posts dataset
 │   └── cmv_comments.csv               # CMV comments dataset
 ├── notebooks/
-│   ├── word_embeddings_lab.ipynb      # Lab: Word embeddings for social text
 │   └── nlp_analysis_starter.ipynb     # HW5: Multi-document NLP analysis
 └── output/
     └── (your output files will go here)
@@ -76,28 +68,7 @@ nlp-analysis-social-text/
    jupyter notebook
    ```
 
-5. **Complete the lab first**: Start with `notebooks/word_embeddings_lab.ipynb` 
-
-6. **Then work on the homework**: `notebooks/nlp_analysis_starter.ipynb`
-
-## Word Embeddings Lab (90 minutes)
-
-Complete this hands-on lab before starting the homework. You'll work in groups to explore word embeddings with social text data.
-
-### Lab Components:
-- **Setup & Exploration (20 min)**: Load embeddings and explore word similarities
-- **Semantic Axes (25 min)**: Create axes for political/social concepts
-- **CMV Analysis (25 min)**: Analyze discourse patterns in ChangeMyView data
-- **Visualization & Interpretation (15 min)**: Create plots and discuss findings
-- **Reflection (5 min)**: Group discussion on biases and applications
-
-The lab introduces key concepts and tools you'll need for the homework assignment.
-
----
-
-## HW5: Multi-Document NLP Analysis
-
-Building on the lab, you'll analyze conversations by examining both CMV posts and their comments together.
+5. **Then work on the homework**: `notebooks/nlp_analysis_starter.ipynb`
 
 ### Assignment Tasks
 
@@ -165,14 +136,13 @@ Building on the lab, you'll analyze conversations by examining both CMV posts an
 
 ### Tips for Success
 
-1. **Complete the lab first**: The word embeddings lab provides essential background for the homework
-2. **Think about relationships**: Focus on how posts and comments relate to each other, not just individual documents
-3. **Use the linking structure**: Take advantage of the post-comment relationships to analyze conversations
-4. **Build on the lab**: Apply semantic axes and word embeddings techniques from the lab
-5. **Think about discourse dynamics**: Consider how initial arguments (posts) generate different types of responses (comments)
-6. **Consider platform norms**: r/ChangeMyView has unique rules about respectful debate - how do these affect language patterns?
-7. **Connect to social theory**: Link your computational findings to broader questions about persuasion, deliberation, and opinion change
-8. **Document your linking approach**: Explain how you connected the datasets and handled any data quality issues
+1. **Think about relationships**: Focus on how posts and comments relate to each other, not just individual documents
+2. **Use the linking structure**: Take advantage of the post-comment relationships to analyze conversations
+3. **Build on the lab**: Apply semantic axes and word embeddings techniques from our lab sessions
+4. **Think about discourse dynamics**: Consider how initial arguments (posts) generate different types of responses (comments)
+5. **Consider platform norms**: r/ChangeMyView has unique rules about respectful debate - how do these affect language patterns?
+6. **Connect to social theory**: Link your computational findings to broader questions about persuasion, deliberation, and opinion change
+7. **Document your linking approach**: Explain how you connected the datasets and handled any data quality issues
 
 ### Common Issues and Solutions
 
@@ -191,17 +161,9 @@ Building on the lab, you'll analyze conversations by examining both CMV posts an
   - Write your own interpretation and analysis
 - Collaboration is encouraged for understanding concepts, but each student must submit their own work
 
-### Submission Deadline
-
-**Due: [One week from assignment date]**
+### Submission
 
 Submit through GitHub Classroom by pushing your completed notebook and any additional files to your repository.
-
-### Getting Help
-
-- Office hours: [Instructor office hours]
-- Discussion forum: Post questions on bCourses
-- Email: [Instructor email] for urgent issues
 
 ### Additional Resources
 

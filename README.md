@@ -43,108 +43,145 @@ nlp-analysis-social-text/
 │   ├── changemyview_posts.csv         # CMV posts dataset
 │   └── cmv_comments.csv               # CMV comments dataset
 ├── notebooks/
-│   └── nlp_analysis_starter.ipynb     # HW5: Multi-document NLP analysis
+│   └── nlp_analysis.ipynb     
 └── output/
     └── (your output files will go here)
 ```
 
-### Setup Instructions
+### Setup Instructions (Local)
 
 1. **Clone this repository** from GitHub Classroom
 
-2. **Create a virtual environment** (recommended):
+2. **Create a conda environment** (recommended):
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   conda create -n nlp-hw5 python=3.9
+   conda activate nlp-hw5
    ```
+   
+   Note: If you don't have conda installed, you can get it from [Anaconda](https://www.anaconda.com/products/individual) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (lighter weight).
 
 3. **Install required packages**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Launch Jupyter Notebook**:
-   ```bash
-   jupyter notebook
-   ```
+4. **Open the notebook**: 
+   - **Jupyter**: `jupyter notebook notebooks/nlp_analysis.ipynb`
+   - **VSCode**: Open the notebook file 
 
-5. **Then work on the homework**: `notebooks/nlp_analysis_starter.ipynb`
+---
 
-### Assignment Tasks
+## Assignment: Basic NLP Analysis
 
-#### Part 1: Dataset Linking & Multi-Document Preprocessing (20 points)
-- Link posts to their comments using shared ID columns
-- Apply consistent preprocessing to both posts and comments
-- Handle missing data and empty texts appropriately
-- Document your approach to multi-document preprocessing
+This assignment provides a structured approach to analyzing social discourse patterns in Reddit's r/ChangeMyView community using fundamental NLP techniques.
 
-#### Part 2: Comparative Language Analysis (20 points)
-- Compare word frequencies between posts (arguments) and comments (responses)
-- Identify distinctive vocabulary for each document type
-- Visualize language differences and discuss their implications
-- Analyze what these patterns reveal about different communication purposes
+### Required Tasks:
+1. **Data Loading & Basic Exploration**
+   - Successfully load both datasets (posts and comments)
+   - Perform basic data exploration (shape, columns, missing values)
+   - Create simple statistics (average post length, comment counts)
+   - Visualize basic distributions (post scores, comment lengths)
 
-#### Part 3: Conversation Analysis (20 points)  
-- Create post-comment pairs for conversations with multiple responses
-- Calculate semantic similarity between posts and their comments
-- Analyze conversation dynamics and response patterns
-- Identify characteristics of high-engagement discussions
+2. **Text Preprocessing**
+   - Clean text data (remove special characters, lowercase)
+   - Tokenize posts and comments
+   - Remove stopwords using NLTK
+   - Create and compare word frequency distributions
 
-#### Part 4: Word Embeddings & Social Discourse (20 points)
-- Apply word embeddings techniques from the lab to analyze semantic patterns
-- Create semantic axes relevant to social/political discourse
-- Project key terms onto these axes to analyze discourse positioning
-- Compare semantic patterns between posts and comments
+3. **Comparative Analysis**
+   - Find the top 20 most common words in posts vs comments
+   - Create word clouds for posts and comments separately
+   - Calculate basic text statistics (average word length, vocabulary size)
+   - Identify unique words that appear only in posts or only in comments
 
-#### Part 5: Social Dynamics Interpretation (20 points)
-- Write a 3-4 paragraph interpretation addressing social science questions
-- Connect findings to theories of online deliberation and persuasion
-- Discuss what patterns reveal about productive vs. unproductive discourse
-- Consider implications for designing better discussion platforms
+4. **Sentiment Analysis**
+   - Apply a pre-built sentiment analyzer (VADER or TextBlob)
+   - Compare sentiment distributions between posts and comments
+   - Find the most positive and negative posts/comments
+   - Create visualizations of sentiment patterns
 
-### Deliverables
+5. **Interpretation**
+   - Write a 2-paragraph summary of your findings
+   - Discuss one interesting pattern you discovered
+   - Suggest one way these findings could be useful in a social science setting
 
-1. **Completed Lab Notebook**: `word_embeddings_lab.ipynb` with group reflections
+### Expected Deliverables:
+- Completed notebook with all code cells executed
+- At least 4 visualizations
+- Written interpretation of findings
+- Documentation of any challenges faced
 
-2. **Completed HW5 Notebook**: `nlp_analysis_starter.ipynb` with:
-   - All code cells executed showing multi-document analysis
-   - Your interpretation and analysis in markdown cells
-   - Clear documentation of your linking and preprocessing approach
+### Stretch Goals (Optional)
 
-3. **Multi-Document Analysis Summary** (in HW5 notebook):
-   - Key findings from linking posts with comments
-   - Insights about language differences between posts and responses
-   - Word embeddings analysis of social discourse patterns
-   - Social science interpretation connecting findings to theories of online deliberation
-   - Discussion of what conversation patterns reveal about productive discourse
+For students who complete the basic analysis and want additional challenges:
 
-4. **Push to GitHub Classroom**:
-   - Commit both completed notebooks
-   - Include any additional output files in the `output/` folder
-   - Ensure all code runs without errors
+1. **Advanced Text Analysis**
+   - Link posts to their comments using ID columns
+   - Implement TF-IDF to find distinctive vocabulary between posts and comments
+   - Apply named entity recognition to identify key topics
 
-### Grading Rubric
+2. **Conversation Dynamics**
+   - Calculate semantic similarity between posts and their comments
+   - Analyze response patterns (agreement vs disagreement language)
+   - Identify high-engagement conversation characteristics
 
-| Component | Points | Criteria |
-|-----------|--------|----------|
-| Lab Completion | 10 | Completed word embeddings lab with group reflections |
-| Dataset Linking | 20 | Successfully links posts with comments, handles data quality |
-| Multi-Doc Analysis | 25 | Thorough comparison of posts vs comments using multiple techniques |
-| Word Embeddings | 20 | Applies semantic axes to analyze social discourse patterns |
-| Social Interpretation | 15 | Thoughtful connection to theories of online deliberation |
-| Documentation | 10 | Clear explanations of methods and multi-document approach |
+3. **Word Embeddings**
+   - Load and apply pre-trained word embeddings (GloVe or Word2Vec)
+   - Calculate semantic distances between key concepts
+   - Visualize word relationships in semantic space
 
-### Tips for Success
+4. **Machine Learning Applications**
+   - Build a classifier to predict comment engagement levels
+   - Implement topic modeling (LDA) to discover conversation themes
+   - Explore what linguistic features correlate with successful persuasion
 
-1. **Think about relationships**: Focus on how posts and comments relate to each other, not just individual documents
-2. **Use the linking structure**: Take advantage of the post-comment relationships to analyze conversations
-3. **Build on the lab**: Apply semantic axes and word embeddings techniques from our lab sessions
-4. **Think about discourse dynamics**: Consider how initial arguments (posts) generate different types of responses (comments)
-5. **Consider platform norms**: r/ChangeMyView has unique rules about respectful debate - how do these affect language patterns?
-6. **Connect to social theory**: Link your computational findings to broader questions about persuasion, deliberation, and opinion change
-7. **Document your linking approach**: Explain how you connected the datasets and handled any data quality issues
+---
 
-### Common Issues and Solutions
+## Optional: Advanced Example Approach
+
+### Exploring Modern NLP with RAG and LLMs
+
+In the `example_approach/` folder, you'll find an example of an approach to analyzing CMV conversations using Retrieval-Augmented Generation (RAG) and Large Language Models (LLMs). This example is **entirely optional** and provided for inspiration only.
+
+**What the example demonstrates:**
+- **Data Collection via API**: Using PRAW (Python Reddit API Wrapper) to collect fresh CMV data with delta tracking
+- **Delta Analysis**: Identifying which comments successfully changed views (marked by delta awards)
+- **RAG Implementation**: Using TF-IDF retrieval to find relevant conversation snippets
+- **LLM Analysis**: Employing Qwen 2.5 to analyze persuasion patterns and rhetorical strategies
+- **Structured Output**: Generating JSON-formatted insights about what makes arguments persuasive
+
+**Key Concepts You Could Adapt (without LLMs):**
+- **Success Metrics**: Analyzing differences between comments that changed views vs those that didn't
+- **Conversation Threading**: Following argument chains from initial post to resolution
+- **Persuasion Patterns**: Identifying linguistic features of successful arguments
+- **Rhetorical Analysis**: Examining ethos, pathos, logos in argumentation
+
+**Important Notes:**
+- This approach requires additional dependencies (PRAW, transformers, torch)
+- LLM inference benefits greatly from GPU access (Google Colab)
+- The focus includes traditional NLP and prompt engineering
+- You can extract ideas without implementing the full stack
+
+**If You're Interested:**
+- Advanced pathway students might incorporate LLM-based analysis
+- You could use simpler methods to explore similar research questions
+- Consider the delta concept in r/changemyview: What language patterns correlate with view changes?
+- Think about how traditional NLP methods could answer similar questions
+
+Remember: This is one possible approach among many. Your creativity in applying NLP techniques to understand online discourse is what matters most.
+
+---
+
+## Tips for Success
+
+1. **Start with exploration**: Understand your data before diving into analysis
+2. **Document as you go**: Explain your thinking and choices
+3. **Visualize findings**: Good visualizations tell the story better than numbers
+4. **Think critically**: What do these patterns really mean for online discourse?
+
+---
+
+## Common Issues and Solutions
 
 - **Word embeddings loading**: The first time loading GloVe embeddings may take a few minutes and ~200MB download
 - **Dataset linking errors**: Ensure you're using the correct ID columns (`posts['id']` and `comments['link_id']`)
@@ -153,27 +190,47 @@ nlp-analysis-social-text/
 - **Import errors**: Make sure you've installed all packages from requirements.txt, including `gensim`
 - **Empty conversations**: Some posts may have no comments in the dataset - handle these cases gracefully
 
-### Academic Integrity
+---
+
+## Academic Integrity
 
 - You may use AI tools (ChatGPT, Copilot, etc.) to help with coding, but you must:
   - Document any AI assistance in code comments
   - Understand and be able to explain all code you submit
   - Write your own interpretation and analysis
 - Collaboration is encouraged for understanding concepts, but each student must submit their own work
-
-### Submission
-
-Submit through GitHub Classroom by pushing your completed notebook and any additional files to your repository.
-
-### Additional Resources
-
-- [Gensim Word2Vec Tutorial](https://radimrehurek.com/gensim/models/word2vec.html)
-- [NLTK Documentation](https://www.nltk.org/)
-- [Scikit-learn Text Feature Extraction](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction)
-- [Pandas DataFrame Merging](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html)
-- [Word Embeddings Guide](https://machinelearningmastery.com/what-are-word-embeddings/)
-- [Multi-document NLP Techniques](https://www.aclweb.org/anthology/)
+- Clearly indicate which pathway you chose at the top of your notebook
 
 ---
 
-Good luck with your analysis! Remember, this is about more than running code - you're exploring how computational methods can reveal patterns in social interaction and help us understand online discourse, persuasion, and the dynamics of opinion change in digital communities.
+## Submission
+
+2. **Complete all required tasks** for your chosen pathway
+3. **Push to GitHub Classroom** with:
+   - Completed notebook
+   - Any additional output files in the `output/` folder
+   - Clear indication of which pathway you followed
+
+---
+
+## Additional Resources
+
+### General NLP:
+- [NLTK Documentation](https://www.nltk.org/)
+- [Scikit-learn Text Feature Extraction](https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction)
+- [Pandas DataFrame Merging](https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html)
+
+### Word Embeddings:
+- [Gensim Word2Vec Tutorial](https://radimrehurek.com/gensim/models/word2vec.html)
+- [Word Embeddings Guide](https://machinelearningmastery.com/what-are-word-embeddings/)
+- [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/)
+
+### Advanced Techniques:
+- [Hugging Face Transformers](https://huggingface.co/transformers/)
+- [spaCy Documentation](https://spacy.io/)
+- [Multi-document NLP Techniques](https://www.aclweb.org/anthology/)
+
+### Online Discourse Research:
+- [CMV Dataset Paper](https://arxiv.org/abs/1602.01103)
+- [Argument Mining Survey](https://www.aclweb.org/anthology/J17-3001/)
+- [Online Deliberation Theory](https://www.annualreviews.org/doi/10.1146/annurev-polisci-032317-092722)
